@@ -6,7 +6,9 @@ const rateLimit = require('express-rate-limit');
 const morgan = require('morgan');
 
 const app = express();
-
+app.get('/api/status', (req, res) => {
+  res.json({ status: 'ok' });
+});
 // Middleware
 app.use(helmet());
 app.use(cors({ origin: '*' }));
